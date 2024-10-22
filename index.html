@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diwali Wishes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container text-center mt-5">
+        <h1 class="main-heading">Happy Diwali 2024!</h1>
+        <p class="subheading">May the Festival of Lights bring joy, health, and prosperity to you and your family.</p>
+        
+        <!-- Diwali Image -->
+        <img src="images/diya.jpg" alt="Diya" class="diwali-image img-fluid my-4">
+        
+        <!-- Wishes Section -->
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>Diwali Wishes</h2>
+            </div>
+            <div class="card-body">
+                <p class="lead">Add your own wishes below!</p>
+                <textarea id="wish-input" class="form-control mb-3" rows="3" placeholder="Write your Diwali wish..."></textarea>
+                <button id="add-wish-btn" class="btn btn-primary">Add Wish</button>
+                <ul id="wish-list" class="list-group mt-3"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
