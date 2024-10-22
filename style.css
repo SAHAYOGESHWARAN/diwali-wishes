@@ -1,0 +1,50 @@
+/* Custom Styles */
+body {
+    background-color: #fff3e0;
+    font-family: 'Arial', sans-serif;
+}
+
+.main-heading {
+    font-family: 'Sacramento', cursive;
+    font-size: 3rem;
+    color: #d9534f;
+}
+
+.subheading {
+    font-size: 1.5rem;
+    color: #5a5a5a;
+}
+
+.diwali-image {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    background-color: #f39c12;
+    color: white;
+    font-size: 1.25rem;
+}
+
+#add-wish-btn {
+    background-color: #e74c3c;
+    border: none;
+}
+
+#add-wish-btn:hover {
+    background-color: #c0392b;
+}
+
+#wish-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#wish-list li {
+    background-color: #ffebcc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
