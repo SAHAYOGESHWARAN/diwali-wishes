@@ -1,31 +1,18 @@
-// Add event listener to the button
-document.getElementById('add-wish-btn').addEventListener('click', function() {
-    // Get the value from the text area
-    let wish = document.getElementById('wish-input').value;
-
-    // Check if the wish is not empty
-    if (wish.trim() !== "") {
-        // Create a new list item
-        let listItem = document.createElement('li');
-        listItem.className = 'list-group-item';
-        listItem.textContent = wish;
-
-        // Add the list item to the wish list
-        document.getElementById('wish-list').appendChild(listItem);
-
-        // Clear the input field
-        document.getElementById('wish-input').value = "";
-    }
-});
-
 document.addEventListener("DOMContentLoaded", function() {
     const wishInput = document.getElementById("wish-input");
     const wishList = document.getElementById("wish-list");
     const addWishBtn = document.getElementById("add-wish-btn");
+    const themeSwitch = document.getElementById("theme-switch");
 
     // Load saved wishes from localStorage
     const savedWishes = JSON.parse(localStorage.getItem("wishes")) || [];
     savedWishes.forEach(addWishToList);
+
+    // Load and set the dark mode state
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+        themeSwitch.checked = true;
+    }
 
     // Add a wish
     addWishBtn.addEventListener("click", () => {
@@ -37,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Add wish to the DOM
     function addWishToList(wish) {
         const li = document.createElement("li");
         li.textContent = wish;
@@ -44,14 +32,20 @@ document.addEventListener("DOMContentLoaded", function() {
         wishList.appendChild(li);
     }
 
+    // Save wish to localStorage
     function saveWish(wish) {
         savedWishes.push(wish);
         localStorage.setItem("wishes", JSON.stringify(savedWishes));
     }
-});
 
-const toggleSwitch = document.querySelector('#theme-switch');
-
-toggleSwitch.addEventListener('change', function() {
-    document.body.classList.toggle('dark-mode');
+    // Dark mode toggle
+    themeSwitch.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+        // Persist dark mode in localStorage
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
 });
